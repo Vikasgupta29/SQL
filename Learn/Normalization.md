@@ -15,6 +15,7 @@ retailoutletstock (retailoutletid, itemcode, description, retailoutletlocation (
 You can notice in the data stored that the retailoutletid and retailoutletlocation are repeating for every item available in the retail outlet store. This is an example of redundant information. Redundant information will lead to more disk space to store the data than actually required.  
 
 **Data inconsistency** results from anything that affects data integrity. This can cause the data to be correct in one place and wrong elsewhere it is stored. This can lead to unreliable and meaningless information.  
+
 Consider the following relations for the case study:  
 **retailoutletstock** (retailoutletid, itemcode, description, retailoutletlocation (street, city, zipcode), qtyavailable, retailunitprice, itemclass)  
 **itemavailability** (itemcode, description, retailoutletid, retailoutletaddress (street, city, zipcode), qtyavailable)  
@@ -41,6 +42,7 @@ Let us see these anomalies in detail with an example.
 ![image](https://github.com/Vikasgupta29/SQL/assets/92180754/b5cb085f-8fea-42c2-a1a1-6b03b91f73a9)
 
 An anomaly is an unexpected side effect from trying to insert, update, or delete a row. Essentially more data must be provided to accomplish an operation than would be expected.  
+
 Consider the table retailoutletstock:  
 
 ![image](https://github.com/Vikasgupta29/SQL/assets/92180754/0c60631a-9dd9-4436-a47f-57c5d53ef3b6)
@@ -75,6 +77,7 @@ A relation R is said to be in 1 NF (First Normal) if and only if:
 - There should not be any multi-valued attribute  
 
 To achieve 1 NF, we will split the non-atomic attribute, **retailoutletlocation** into three different attributes- **street**, **city** and **zipcode** all of them being atomic, the resulting relation will be in First Normal Form.  
+
 The resulting retailoutletstock table in First Normal Form(1 NF) is:  
 
 ![image](https://github.com/Vikasgupta29/SQL/assets/92180754/65f0fe8e-89b2-4f86-925d-d722165282e7)
