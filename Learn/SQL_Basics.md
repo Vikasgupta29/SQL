@@ -122,12 +122,11 @@ SQL provides many built-in functions in order to accomplish many tasks. Some of 
 - Character functions
 - Conversion functions 
 - Date functions 
-- Aggregate functions  
+- Aggregate functions    
 SQL functions are built in modules provided by a database. You can use them in data manipulation statements to perform calculations on data.  
 All functions return a single value. They are categorized into two types based on number of rows they operate upon.  
 ![image](https://github.com/Vikasgupta29/SQL/assets/92180754/f71f4498-815b-42f9-80db-d80f26ac5849)  
 ![image](https://github.com/Vikasgupta29/SQL/assets/92180754/78f1a538-db31-4a27-8705-73f764852711)  
-
 Aggregate functions operate on multiple rows to return a single row. All aggregate functions ignore NULL values except COUNT(*).  
 
 
