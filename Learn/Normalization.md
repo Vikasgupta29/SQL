@@ -69,7 +69,7 @@ BCNF (Boyce -Codd Normal Form)
 
 *4NF, 6NF & 6NF is applicable to multivalued dependencies and complex table scenarios.
 
-###1 NF
+### 1 NF
 A relation R is said to be in 1 NF (First Normal) if and only if:
 - All the attributes of R are atomic in nature  
 - There should not be any multi-valued attribute  
@@ -86,7 +86,7 @@ Note:- A multi-valued attribute is an attribute which can have more than one val
 **Limitation:**
 As we can see in the retailoutletstock relation above, the attribute description is dependent only on itemcode (I1001->Britannia Marie Gold Cookies). Hence, we have the redundant data in the table which can be eliminated by having a separate table for item details which leads us to the next normal form.
 
-###2NF
+### 2NF
 A relation R is said to be in 2 NF (Second Normal) form if and only if:
 - R is already in 1 NF  
 - There is no partial dependency in R which exists between non-key attributes and key attributes  
@@ -109,7 +109,7 @@ After removing the partial dependencies, we have three tables item, retailoutlet
 Still, in the case study, we can see that itemclass attribute is completely dependent on retailunitprice and it is repeated whenever two items have the same retailunitprice. So, we still have data redundancy.
 If the itemclass is changed for a range of retailunitprice, we will have to update all the records in the retailstockdetails. Which leads us to the third normal form.
 
-###3NF
+### 3NF
 A relation R is said to be in 3 NF (Third Normal Form) if and only if:
 - R is already in 2 NF
 - There is no transitive dependency which exists between key attributes and non-key attributes through other non-key attributes  
@@ -138,7 +138,7 @@ Even after converting to 3 NF, we can see that storing itemclass for every retai
 **Advantage:**
 3 NF ensures data integrity. It also reduces the amount of data duplication.
 
-###SUMMARY
+### SUMMARY
 ![image](https://github.com/Vikasgupta29/SQL/assets/92180754/6c26e89e-3a2f-49c0-b844-e635c2cc7ec0)
 
 **Using normalization:**
