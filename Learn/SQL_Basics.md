@@ -55,7 +55,7 @@ CREATE TABLE Student (
     LName VARCHAR2(10));  
 
 ### DEFAULT
-A column can be given the default value by using DEFAULT option. The data type of column and default expression must be the same.
+A column can be given the default value by using DEFAULT option. The data type of column and default expression must be the same.  
 CREATE TABLE Student (  
     StudentId INTEGER,  
     FName VARCHAR2(10),  
@@ -92,6 +92,9 @@ CREATE TABLE Marks(
 ### CONSTRAINT SUMMARY  
 ![image](https://github.com/Vikasgupta29/SQL/assets/92180754/e913ad62-a88e-46ae-8b54-0d5673e44dec)
 
+## ALTER TABLE
+ALTER TABLE command are used to change the structure of the existing table without any loss of data. It can also be used to rename a column, change the data type of a column and to add or remove constraints.  
+![image](https://github.com/Vikasgupta29/SQL/assets/92180754/4c380e9d-bda8-4e32-930a-d6bc4e3dcced)
 
 
 
