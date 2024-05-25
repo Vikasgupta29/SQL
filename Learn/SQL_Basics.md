@@ -30,8 +30,8 @@
 ![image](https://github.com/Vikasgupta29/SQL/assets/92180754/42f7a0d1-add9-4fb1-8aca-60286578f501)
 
 An alternate method to drop table is given below:  
-**DROP TABLE <Table name> CASCADE CONSTRAINTS;**  
-**CASCADE CONSTRAINTS** clause should be added to the DROP statement to drop all the referential integrity constraints that refer to primary and unique keys in the table.
+**DROP TABLE table_name CASCADE CONSTRAINTS;**  
+CASCADE CONSTRAINTS clause should be added to the DROP statement to drop all the referential integrity constraints that refer to primary and unique keys in the table.
 
 ## CONSTRAINTS  
 constraints are typically specified along with the CREATE TABLE statement. Constraints are classified into different types based on the number of columns they act upon as well as on the way they are specified.  
@@ -128,7 +128,7 @@ All functions return a single value. They are categorized into two types based o
 ![image](https://github.com/Vikasgupta29/SQL/assets/92180754/f71f4498-815b-42f9-80db-d80f26ac5849)  
 ![image](https://github.com/Vikasgupta29/SQL/assets/92180754/78f1a538-db31-4a27-8705-73f764852711)  
 
-### AGGREGATE FUNCTIONS
+Aggregate functions operate on multiple rows to return a single row. All aggregate functions ignore NULL values except COUNT(*).  
 
 
 
