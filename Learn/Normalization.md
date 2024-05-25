@@ -30,9 +30,9 @@ What happens if we try to insert(add) the details of a new retail outlet that cu
 What happens if we try to delete the item of an itemcode I1005?
 - The details of the retail outlet R1003 will also be deleted from the database.
 How many rows will be updated if the retail outlet location of R1002 is changed from Victoria Street to Saint John Street?
-- 3 Rows will be updated
+- 3 Rows will be updated.
 What are the details we need to insert when new items are supplied to a retail outlet?
-- Apart from all necessary details, retailoutletlocation will also be inserted which is redundant
+- Apart from all necessary details, retailoutletlocation will also be inserted which is redundant.
 We have seen insert, delete, update anomalies, and data redundancy in the above given example. Functional dependencies may lead to anomalies. To minimize anomalies there is a need to refine functional dependencies using Normalization.
 
 
