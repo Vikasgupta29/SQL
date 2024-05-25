@@ -9,7 +9,7 @@
 - Integral data types
 - Non-Integral data types
 - Miscellaneous data types
-  
+</br>
 1. SQL supports two character data types for storing printable and displayable characters.  
    ![image](https://github.com/Vikasgupta29/SQL/assets/92180754/7e8be429-4beb-4a18-a58f-137680d73880)  
 3. SQL supports SMALLINT, INTEGER and INT data types that are used for storing whole numbers.  
