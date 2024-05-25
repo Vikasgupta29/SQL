@@ -96,11 +96,50 @@ CREATE TABLE Marks(
 ALTER TABLE command are used to change the structure of the existing table without any loss of data. It can also be used to rename a column, change the data type of a column and to add or remove constraints.  
 ![image](https://github.com/Vikasgupta29/SQL/assets/92180754/4c380e9d-bda8-4e32-930a-d6bc4e3dcced)
 
+## INSERT STATEMENT  
+Insert statement is used to add tuples (records) to the table.  
+![image](https://github.com/Vikasgupta29/SQL/assets/92180754/c19b23d5-84d2-4df5-a443-5df3a5ae24a5)
+
+## SELECT STATEMENT  
+SELECT Statement in SQL is used to retrieve or fetch data from a database. We can fetch either the entire table or according to some specified rules.  
+![image](https://github.com/Vikasgupta29/SQL/assets/92180754/e771859c-9d72-4f13-8480-d4cb84272111)
+
+SELECT statement can have many clauses so it is important to understand the order in which these are executed to provide the result. A quick way to remember this is to use the mnemonic "Frank John's Wicked Grave Haunts Several Dull Owls".  
+![image](https://github.com/Vikasgupta29/SQL/assets/92180754/fac11b2e-5e05-4ea5-8e5c-f39ba791655d)
+
+## UPDATE STATEMENT  
+Update statement is used to modify existing rows in a single table in a relational database. The database system ensures that no constraints are violated during execution of an update statement. Any violation of constraints results in failure of the statement.  
+![image](https://github.com/Vikasgupta29/SQL/assets/92180754/f51d917c-60dc-4502-bfc3-2719996190a2)
+
+## DELETE STATEMENT  
+DELETE statement is used to delete records from a single table in a relational database. The database system ensures that no constraints are violated during the execution of a delete statement. Any violation of constraints results in failure of the statement.  
+TRUNCATE statement can also be used to delete data from tables. TRUNCATE statement deletes all records from the table as it does not support WHERE clause. TRUNCATE statement is a faster option compared to DELETE when you have to delete all records from the table.  
+![image](https://github.com/Vikasgupta29/SQL/assets/92180754/5a9a822d-3ba9-41c5-a9de-efd7778f82d0)
+
+## SQL FUNCTIONS  
+SQL provides many built-in functions in order to accomplish many tasks. Some of the commonly used built-in functions are:
+- Numeric functions 
+- Character functions
+- Conversion functions 
+- Date functions 
+- Aggregate functions  
+SQL functions are built in modules provided by a database. You can use them in data manipulation statements to perform calculations on data.  
+All functions return a single value. They are categorized into two types based on number of rows they operate upon.  
+![image](https://github.com/Vikasgupta29/SQL/assets/92180754/f71f4498-815b-42f9-80db-d80f26ac5849)  
+![image](https://github.com/Vikasgupta29/SQL/assets/92180754/78f1a538-db31-4a27-8705-73f764852711)  
+
+### AGGREGATE FUNCTIONS
+
+
+
+
+
 
 
 
 
 
   
+
 
 
