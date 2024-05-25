@@ -45,13 +45,13 @@ Consider the table retailoutletstock:
 
 ![image](https://github.com/Vikasgupta29/SQL/assets/92180754/0c60631a-9dd9-4436-a47f-57c5d53ef3b6)
 
-1. What happens if we try to insert(add) the details of a new retail outlet that currently has no items in its stock?
+1. What happens if we try to insert(add) the details of a new retail outlet that currently has no items in its stock?  
    NULL values would be inserted into the itemdetails columns, which is not preferable.
-2. What happens if we try to delete the item of an itemcode I1005?
+2. What happens if we try to delete the item of an itemcode I1005?  
    The details of the retail outlet R1003 will also be deleted from the database.
-3. How many rows will be updated if the retail outlet location of R1002 is changed from Victoria Street to Saint John Street?
+3. How many rows will be updated if the retail outlet location of R1002 is changed from Victoria Street to Saint John Street?  
    3 Rows will be updated.
-4. What are the details we need to insert when new items are supplied to a retail outlet?
+4. What are the details we need to insert when new items are supplied to a retail outlet?  
    Apart from all necessary details, retailoutletlocation will also be inserted which is redundant.
 
 Functional dependencies may lead to anomalies. To minimize anomalies there is a need to refine functional dependencies using Normalization.
