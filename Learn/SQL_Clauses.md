@@ -21,10 +21,10 @@ WHERE clause is used to filter records. It is used to extract only those records
 ## CASE  
 CASE statement can be used in SELECT to conditionally assign values to a computed attribute. It can also be used with WHERE, GROUP BY etc.  
 CASE statement has two different syntax styles:  
-Simple CASE expression  
+**Simple CASE expression**  
 ![image](https://github.com/Vikasgupta29/SQL/assets/92180754/064cc179-1a24-4908-92f1-56d7cd51e9b3)
 
-Searched CASE expression  
+**Searched CASE expression**  
 ![image](https://github.com/Vikasgupta29/SQL/assets/92180754/72165df2-92d5-45da-ac17-75606a27e79f)
 
 The CASE statement goes through conditions and returns a value when the first condition is met. So, once a condition is true, it will stop reading and return the result. If no conditions are true, it returns the value in the ELSE clause.  
@@ -42,23 +42,28 @@ GROUP BY groups the data from the table into different groups based on the crite
 
 - Without Group By Aggregate function produces 1 row for all the rows selected by a query.  
 - **HAVING** clause allows aggregate functions to be used as filter criteria which cannot be done using WHERE clause.  
-  SELECT DEPT, SUM(Salary) FROM Employee GROUP BY DEPT HAVING SUM(Salary) > 90000;  
+  **SELECT DEPT, SUM(Salary) FROM Employee GROUP BY DEPT HAVING SUM(Salary) > 90000;**  
 - Aggregate functions cannot be used in WHERE clause even if GROUP BY is used.  
 - Nested aggregate function cannot be used in SELECT clause without GROUP BY clause.  
 - Order By cannot be used on columns on which Grouping is not being done.  
 
-Do’s for Group by and Having clauses:  
+**Do’s for Group by and Having clauses:**  
 1. GROUP BY clause should contain all non-aggregate columns that are present in SELECT clause
 2. GROUP BY clause should be mandatory when there is a list of aggregate and non-aggregate columns in SELECT statement
 3. Whenever nested aggregate columns appear in the SELECT clause, GROUP BY clause should be mandatorily used
 4. HAVING cannot be written without the GROUP BY clause in the query
 5. Aggregate column condition(s) should always be written along with the HAVING clause and not with the WHERE clause  
 
-Don’ts for Group by and Having clauses:
+**Don’ts for Group by and Having clauses:**
 1. Columns from the list of the SELECT clause should not be skipped in the GROUP BY clause. However, you can add an extra non-aggregate column which is not present in the SELECT to the GROUP BY clause
 2. GROUP BY clause should not contain any aggregate columns
 3. Aliased name given for the column should not be used in GROUP BY clause
 4. HAVING clause should not contain non-aggregate columns which are not present in the GROUP BY clause  
+
+## UNION  
+Use UNION or UNION ALL clauses to combine results of two or more SELECT statements. The select statements may be on the same or different tables. They must have the same number of columns and their data types of columns at the same position in the queries must be compatible (either same or convertible through automatic conversion).  
+UNION removes all duplicates from the result. Two records are considered duplicates if values at corresponding positions of all their columns match.  
+![image](https://github.com/Vikasgupta29/SQL/assets/92180754/15b95e31-d6a0-4dfa-a4fc-19912bd58d04)
 
 
 
