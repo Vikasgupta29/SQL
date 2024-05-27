@@ -7,6 +7,13 @@ Suppose, requirement is to display employee id, employee name along with compute
  ![image](https://github.com/Vikasgupta29/SQL/assets/92180754/10b38046-0fd1-4388-a6de-ce51d490fa5f)  
 In addition, there's a Cross Join (Cartesian product) which is of academic interest only and is rarely used.  
 
+### DATA TABLES  
+We're going to use these tables for learning joins here,  
+![image](https://github.com/Vikasgupta29/SQL/assets/92180754/8a0139e0-bc1a-4eae-b268-59e704ad48fe)  
+![image](https://github.com/Vikasgupta29/SQL/assets/92180754/672412eb-59b4-4ceb-a45c-5a9a92f1e707)  
+
+
+
 ## CROSS JOIN  
 CROSS Join is also referred to as Cartesian Product. A CROSS join with m rows in table A and n rows in table B will always produce m * n rows. Essentially it combines each row from the first table with each row of the second table. A cross join is rarely used as it mostly produces lot of meaningless data.  
 ```
