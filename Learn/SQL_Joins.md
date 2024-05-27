@@ -26,6 +26,10 @@ INNER Join is the most frequently used JOIN. It matches the records from both ta
 SELECT ID, ENAME, E.COMPID AS E_COMPID, C.COMPID AS C_COMPID, MODEL 
 FROM Employee E INNER JOIN Computer C ON E.COMPID = C.COMPID
 ```  
+```
+SELECT ID, ENAME, E.COMPID AS E_COMPID, C.COMPID AS C_COMPID, MODEL 
+FROM Employee E INNER JOIN Computer C USING (COMPID)
+```  
 **Output:**  
 | ID | ENAME          | E_COMPID | C_COMPID | MODEL     |
 |----|----------------|----------|----------|-----------|
