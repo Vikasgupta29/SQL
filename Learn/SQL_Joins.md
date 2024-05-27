@@ -3,8 +3,8 @@ Joins are used to fetch data from multiple tables in a single query.
 Suppose, requirement is to display employee id, employee name along with computer id, model of the computer allocated to the employee in a single tabular format. These type requirements can be met using JOINS which can combine data from multiple tables.  
 ![image](https://github.com/Vikasgupta29/SQL/assets/92180754/d5471ab4-26f2-4b97-8027-5d0a6e83533e)
 
- JOINs are of multiple types:  
- ![image](https://github.com/Vikasgupta29/SQL/assets/92180754/10b38046-0fd1-4388-a6de-ce51d490fa5f)  
+JOINs are of multiple types:  
+![image](https://github.com/Vikasgupta29/SQL/assets/92180754/10b38046-0fd1-4388-a6de-ce51d490fa5f)  
 In addition, there's a Cross Join (Cartesian product) which is of academic interest only and is rarely used.  
 
 ### DATA TABLES  
@@ -13,7 +13,6 @@ Employee Table             |  Computer Table
 :-------------------------:|:-------------------------:
 ![image](https://github.com/Vikasgupta29/SQL/assets/92180754/ad07be9c-a501-477d-a42d-38b3ae9b8750) | ![image](https://github.com/Vikasgupta29/SQL/assets/92180754/61bcf294-9187-4481-b9ca-ded97aa01134)
   
-
 ## CROSS JOIN  
 CROSS Join is also referred to as Cartesian Product. A CROSS join with m rows in table A and n rows in table B will always produce m * n rows. Essentially it combines each row from the first table with each row of the second table. A cross join is rarely used as it mostly produces lot of meaningless data.  
 ```
@@ -100,8 +99,7 @@ A self join is a regular join, but the table is joined with itself.
 We're going to use below table for learning self join.  
 Employee Table             
 :-------------------------:
-![image](https://github.com/Vikasgupta29/SQL/assets/92180754/8908eaaa-3ffe-4dd5-8711-322b408c8091)
-
+![image](https://github.com/Vikasgupta29/SQL/assets/92180754/8908eaaa-3ffe-4dd5-8711-322b408c8091)  
 ```
 SELECT EMP.ID EMPID, EMP.ENAME EMPNAME, MGR.ID MGRID, MGR.ENAME MGRNAME 
 FROM Employee EMP INNER JOIN Employee MGR ON EMP.MANAGER = MGR.ID
@@ -112,4 +110,45 @@ FROM Employee EMP INNER JOIN Employee MGR ON EMP.MANAGER = MGR.ID
 | 5     | Ayaz Mohammad  | 1     | James Potter  |
 | 3     | Emily Rayner   | 2     | Ethan McCarty |
 | 4     | Jack Abraham   | 2     | Ethan McCarty |
+
+## SEMI JOIN  
+Semi-join returns rows from the left table for which there are corresponding matching rows in the right table. Unlike regular joins which include the matching rows from both tables, a semi-join only includes columns from the left table in the result.  
+**There are two main ways to perform a semi-join.**  
+using EXISTS:  
+```
+SELECT column1, column2 FROM table1
+WHERE EXISTS (SELECT 1 FROM table2 WHERE table1.column = table2.column);
+```  
+using IN:  
+```
+SELECT column1, column2 FROM table1
+WHERE column IN (SELECT column FROM table2);
+```
+
+## ANTI JOIN
+Anti-join is a type of join that returns only the rows from one table that do not have any matching rows in the other table. This is useful for identifying rows that are present in one table but not in the other.  
+**There are two main ways to perform an anti-join.**  
+Using LEFT JOIN and IS NULL operator:  
+```
+SELECT u.id
+FROM users u
+LEFT JOIN orders o
+ON u.id = o.user_id
+WHERE o.user_id IS NULL;
+```  
+Using NOT IN operator:
+```
+SELECT id
+FROM users
+WHERE id NOT IN (SELECT user_id FROM orders);
+```
+
+![image](https://github.com/Vikasgupta29/SQL/assets/92180754/26b69051-425f-406f-9db8-a1472040f401)
+
+## SUMMARY  
+![image](https://github.com/Vikasgupta29/SQL/assets/92180754/f61f7dc2-203c-42b0-8abf-e19a92e55759)  
+
+
+
+
 
