@@ -8,8 +8,11 @@ Suppose, requirement is to display employee id, employee name along with compute
 In addition, there's a Cross Join (Cartesian product) which is of academic interest only and is rarely used.  
 
 ### DATA TABLES  
-We're going to use these tables for learning joins here,  
-![image](https://github.com/Vikasgupta29/SQL/assets/92180754/39ba3744-c10e-49f1-a6c3-72f4e15c184c) ![image](https://github.com/Vikasgupta29/SQL/assets/92180754/672412eb-59b4-4ceb-a45c-5a9a92f1e707)  
+We're going to use below 2 tables for learning joins.  
+Employee Table             |  Computer Table
+:-------------------------:|:-------------------------:
+![image](https://github.com/Vikasgupta29/SQL/assets/92180754/ad07be9c-a501-477d-a42d-38b3ae9b8750) | ![image](https://github.com/Vikasgupta29/SQL/assets/92180754/61bcf294-9187-4481-b9ca-ded97aa01134)
+  
 
 ## CROSS JOIN  
 CROSS Join is also referred to as Cartesian Product. A CROSS join with m rows in table A and n rows in table B will always produce m * n rows. Essentially it combines each row from the first table with each row of the second table. A cross join is rarely used as it mostly produces lot of meaningless data.  
@@ -23,7 +26,13 @@ INNER Join is the most frequently used JOIN. It matches the records from both ta
 ```
 SELECT ID, ENAME, E.COMPID AS E_COMPID, C.COMPID AS C_COMPID, MODEL 
 FROM Employee E INNER JOIN Computer C ON E.COMPID = C.COMPID
-```
+```  
+**Output:**  
+| ID | ENAME          | E_COMPID | C_COMPID | MODEL     |
+|----|----------------|----------|----------|-----------|
+| 1  | James Potter   | 1001     | 1001     | Vostro    |
+| 3  | Emily Rayner   | 1002     | 1002     | Precision |
+| 5  | Ayaz Mohammad  | 1003     | 1003     | Edge      |
 
 ## LEFT OUTER JOIN  
 LEFT OUTER Join for tables A and B will always return all records from table A even if matching record is not found in table B as per the join condition. For records where match is found the result set is exactly same as the inner join result. However for non matching records all columns from table B appear as NULL in the result.  
@@ -31,6 +40,15 @@ LEFT OUTER Join for tables A and B will always return all records from table A e
 SELECT ID, ENAME, E.COMPID AS E_COMPID, C.COMPID AS C_COMPID, MODEL
 FROM Employee E LEFT OUTER JOIN Computer C ON E.COMPID = C.COMPID
 ```  
+**Output:**  
+| ID | ENAME          | E_COMPID | C_COMPID | MODEL     |
+|----|----------------|----------|----------|-----------|
+| 1  | James Potter   | 1001     | 1001     | Vostro    |
+| 2  | Ethan McCarty  | NULL     | NULL     | NULL      |
+| 3  | Emily Rayner   | 1002     | 1002     | Precision |
+| 4  | Jack Abraham   | NULL     | NULL     | NULL      |
+| 5  | Ayaz Mohammad  | 1003     | 1003     | Edge      |
+
 Left Outer Join is used to fetch all rows from a main table and some additional information from a lookup table using join condition. Unlike INNER JOINs additional conditions have to be supplied carefully depending upon the business requirement.  
 ```
 SELECT Id, EName, Dept, E.CompId AS E_CompId, C.CompId AS C_CompId, Model
@@ -51,19 +69,47 @@ RIGHT OUTER Join for tables A and B will always return all records from table B 
 ```
 SELECT ID, ENAME, E.COMPID AS E_COMPID, C.COMPID AS C_COMPID, MODEL 
 FROM Employee E RIGHT OUTER JOIN Computer C ON E.COMPID = C.COMPID
-```
+```  
+**Output:**  
+| ID | ENAME          | E_COMPID | C_COMPID | MODEL     |
+|----|----------------|----------|----------|-----------|
+| 1  | James Potter   | 1001     | 1001     | Vostro    |
+| 3  | Emily Rayner   | 1002     | 1002     | Precision |
+| 5  | Ayaz Mohammad  | 1003     | 1003     | Edge      |
+| NULL |     NULL     |   NULL   | 1004     | Horizon   |
 
 ## FULL OUTER JOIN
 FULL OUTER Join combines the effect of both LEFT OUTER JOIN and the RIGHT OUTER JOIN. Full Outer Join between table A and table B returns matched as well as unmatched rows from both tables. For two tables with p and q rows, a 1:1 relationship and m matched rows the total number of rows in the resultset is m + (p - m) + (q - m) = p + q - m.  
 ```
 SELECT ID, ENAME, E.COMPID AS E_COMPID, C.COMPID AS C_COMPID, MODEL
 FROM Employee E FULL OUTER JOIN Computer C ON E.COMPID = C.COMPID
-```
+```  
+**Output:**  
+| ID | ENAME          | E_COMPID | C_COMPID | MODEL     |
+|----|----------------|----------|----------|-----------|
+| 1  | James Potter   | 1001     | 1001     | Vostro    |
+| 2  | Ethan McCarty  | NULL     | NULL     | NULL      |
+| 3  | Emily Rayner   | 1002     | 1002     | Precision |
+| 4  | Jack Abraham   | NULL     | NULL     | NULL      |
+| 5  | Ayaz Mohammad  | 1003     | 1003     | Edge      |
+| NULL |     NULL     | NULL     | 1004     | Horizon   |
 
 ## SELF JOIN  
 A self join is a regular join, but the table is joined with itself.  
+### DATA TABLE  
+We're going to use below table for learning self join.  
+Employee Table             
+:-------------------------:
+![image](https://github.com/Vikasgupta29/SQL/assets/92180754/8908eaaa-3ffe-4dd5-8711-322b408c8091)
+
 ```
 SELECT EMP.ID EMPID, EMP.ENAME EMPNAME, MGR.ID MGRID, MGR.ENAME MGRNAME 
 FROM Employee EMP INNER JOIN Employee MGR ON EMP.MANAGER = MGR.ID
-```
+```  
+**Output:**  
+| EMPID | EMPNAME        | MGRID | MGRNAME       |
+|-------|----------------|-------|---------------|
+| 5     | Ayaz Mohammad  | 1     | James Potter  |
+| 3     | Emily Rayner   | 2     | Ethan McCarty |
+| 4     | Jack Abraham   | 2     | Ethan McCarty |
 
